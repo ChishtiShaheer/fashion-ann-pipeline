@@ -8,7 +8,7 @@ def load_params():
         return yaml.safe_load(f)
 
 def normalize(x):
-    return x.astype("float32") / 255.0
+    return (x.astype("float32") / 255.0 - 0.2860) / 0.3530     # standardization
 
 def preprocess():
     params = load_params()
