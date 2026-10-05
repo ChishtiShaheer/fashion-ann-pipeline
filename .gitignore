@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+.dvc/cache
+.dvc/tmp
+*.h5
+*.npy
+*.npz
+data/raw/
+data/processed/
+models/
