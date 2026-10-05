@@ -8,7 +8,8 @@ def load_params():
         return yaml.safe_load(f)
 
 def normalize(x):
-    return np.clip(x.astype("float32") / 255.0, 0.0, 1.0) - 0.5   # centered
+    x = np.clip(x.astype("float32") / 255.0, 0.0, 1.0)   # [0, 1] as required
+    return (x - 0.2860) / 0.3530                          # teammate's standardization
 
 def preprocess():
     params = load_params()
@@ -45,4 +46,3 @@ def preprocess():
 
 if __name__ == "__main__":
     preprocess()
-# work in progress
